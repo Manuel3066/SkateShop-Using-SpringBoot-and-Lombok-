@@ -1,15 +1,24 @@
 package dmacc.beans;
-//Manuel Corral Ledezma
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
-	private long customerId;
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private long id;
 	private String firstName;
 	private String lastName;
 	private String organization;
+
 
 	public Customer(String firstName, String lastName) {
 		super();
@@ -17,18 +26,11 @@ public class Customer {
 		this.lastName = lastName;
 	}
 	
-	public Customer(long customerId, String organization) {
+	public Customer(long id, String organization) {
 		super();
-		this.customerId = customerId;
+		this.id = id;
 		this.organization = organization;
 	}
 	
-	public Customer(long customerId, String firstName, String lastName, String organization) {
-		super();
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.organization = organization;
-	}
 }
 

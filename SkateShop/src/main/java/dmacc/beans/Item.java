@@ -1,7 +1,10 @@
+/**
+ * @author Chase Van Blair - crvanblair
+ * CIS175 - Fall 2021
+ * Apr 18, 2022
+ */
 package dmacc.beans;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +17,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class Item {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long id;
-	private long orderId;
-	private ArrayList<Item> orderContents = new ArrayList<Item>();
+	private int id;
+	private double itemPrice;
+	private String itemName;
 	
 }
